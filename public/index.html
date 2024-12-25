@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMART ERP</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" type="module" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="app.js" defer></script>
+    <script src="https://unpkg.com/page/page.js"></script>
+</head>
+
+<body id="app">
+    <nav class="menu" id="navbar">
+        <div class="container">
+            <div class="menu-content">
+                <a href="#home" class="logo">
+                    <img src="assets/images/logo.png" alt="logo">
+                </a>
+                <div class="menu-list d-none d-lg-block d-lg-flex">
+                    <div class="menu-title">
+                        <a class="text-decoration-none" href="#feature" id="productFeature"></a>
+                        <a class="text-decoration-none" href="#system" id="ERPSupport"></a>
+                    </div>
+                    <div class="action">
+                        <a href="./contact-us.html" target="_blank"
+                            class="btn btn-demo btn-gradient px-3 d-flex justify-content-center align-items-center text-white font-weight-light"
+                            id="demo"></a>
+                        <!-- <button
+                            class="sign px-3 py-2 d-flex justify-content-center align-items-center font-weight-light"
+                            id="signin"></button> -->
+                    </div>
+                    <div class="dropdown">
+                        <div class="dd-lang dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img id="menuImage" src="assets/images/Flag-Thailand.webp" alt="Dropdown Image">
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-right custom-dd" aria-labelledby="dropdownMenu2">
+                            <div class="dd-lang dropdown-item" onclick="toggleDropdownMenu()">
+                                <img id="toggleImage" src="assets/images/Flag-Uk.webp" alt="Toggle Language">
+                                <span id="toggleText" style="margin-left: 10px;">EN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-mobile ">
+                    <div class="btn-group">
+                        <i class="bi bi-list custom-menu" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"></i>
+                        <div class="dropdown-menu dropdown-menu-right dd-custom">
+                            <div class="custom-flex">
+                                <a class="text-decoration-none" style="color: #203864;" href="#feature"
+                                    id="productFeatureMB"></a>
+                                <a class="text-decoration-none" style="color: #203864;" href="#system"
+                                    id="ERPSupportMB"></a>
+                                <a class="text-decoration-none" style="color: #203864;" href="./contact-us.html"
+                                    target="_blank" id="demoMB"></a>
+                                <!-- <a class="text-decoration-none" style="color: #203864;" href="" id="signinMB"></a> -->
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <div class="dd-lang dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img id="menuImageMB" src="assets/images/Flag-Thailand.webp" alt="Dropdown Image">
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-right custom-dd" aria-labelledby="dropdownMenu2">
+                                <div class="dd-lang dropdown-item" onclick="toggleDropdownMenu()">
+                                    <img id="toggleImageMB" src="assets/images/Flag-Uk.webp" alt="Toggle Language">
+                                    <span id="toggleTextMB" style="margin-left: 10px;">EN</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="bg-hero revealCenter" id="home">
+        <div class="container banner d-flex flex-column justify-content-center revealLeft">
+            <div class="banner-title " id="bannerLabel"></div>
+            <div class="banner-subtitle" id="bannerSubLabel"></div>
+            <a href="./contact-us.html" target="_blank" class="btn-demo btn-gradient" id="demo1"></a>
+        </div>
+    </section>
+    <section>
+        <div class="container sub-hero d-flex flex-column justify-content-center align-items-center">
+            <div class="revealCenter">
+                <div class="text-1 d-flex ">
+                    <div class="white-text" id="promote1"></div>
+                    <div class="yellow-text" id="promote2"></div>
+                </div>
+                <div class="text-2" id="promote3"></div>
+                <div class="text-3 d-flex justify-content-end" id="promote4"></div>
+            </div>
+        </div>
+    </section>
+    <section class="partner">
+        <div class="container">
+            <div class="partner-title d-flex justify-content-center" id="partnerTitle"></div>
+            <div class="company-group d-flex flex-sm-row align-items-center flex-md-column flex-column">
+                <div class="company-row-1 d-flex flex-sm-column flex-row flex-md-row flex-wrap revealBottom">
+                    <img src="assets/images/company2.png" alt="">
+                    <img src="assets/images/company6.png" alt="">
+                    <img src="assets/images/company10.png" alt="">
+                    <img src="assets/images/company9.png" alt="" class="img-9">
+                </div>
+                <div class="company-row-2  d-flex flex-sm-column flex-row flex-md-row flex-wrap revealBottom">
+                    <img src="assets/images/company5.png" alt="">
+                    <img src="assets/images/company1.png" alt="">
+                    <img src="assets/images/company4.png" alt="">
+                </div>
+                <div class="company-row-3  d-flex flex-sm-column flex-row flex-md-row flex-wrap revealBottom">
+                    <img src="assets/images/company7.png" alt="">
+                    <img src="assets/images/company8.png" alt="">
+                    <img src="assets/images/company3.png" alt="">
+                    <img src="assets/images/company11.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="feature" id="feature">
+        <div class="container">
+            <div class="feature-title d-flex justify-content-center" id="Attribute_title"></div>
+            <div
+                class="feature-content d-flex justify-content-around flex-lg-row flex-md-wrap flex-sm-wrap flex-wrap revealCenter">
+                <div class="feature-icon ">
+                    <div class="icon">
+                        <img src="assets/images/3.2.png" alt="">
+                    </div>
+                    <div class="description">
+                        <div class="fdt">
+                            <div class="d-flex justify-content-center" id="fdt1"></div>
+                            <div class="d-flex justify-content-center" id="fdt2"></div>
+                        </div>
+                        <div class="fdst ">
+                            <div id="fdst1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-icon">
+                    <div class="icon">
+                        <img src="assets/images/4.2.png" alt="">
+                    </div>
+                    <div class="description">
+                        <div class="fdt">
+                            <div class="d-flex justify-content-center" id="fdt3"></div>
+                            <div class="d-flex justify-content-center" id="fdt4"></div>
+                        </div>
+                        <div class="fdst" id="fdst2"></div>
+                    </div>
+                </div>
+                <div class="feature-icon">
+                    <div class="icon">
+                        <img src="assets/images/5.2.png" alt="">
+                    </div>
+                    <div class="description">
+                        <div class="fdt">
+                            <div class="d-flex justify-content-center" id="fdt5"></div>
+                            <div class="d-flex justify-content-center" id="fdt6"></div>
+                        </div>
+                        <div class="fdst" id="fdst3"></div>
+                    </div>
+                </div>
+                <div class="feature-icon">
+                    <div class="icon">
+                        <img src="assets/images/6.2.png" alt="">
+                    </div>
+                    <div class="description">
+                        <div class="fdt">
+                            <div class="d-flex justify-content-center" id="fdt7"></div>
+                            <div class="d-flex justify-content-center" id="fdt8"></div>
+                        </div>
+                        <div class="fdst" id="fdst4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="benefit d-flex flex-column">
+        <div class="container">
+            <div class="benefit-title" id="benefit"></div>
+            <swiper-container class="mySwiper revealLeft" slides-per-view="4" centered-slides="false" space-between="25"
+                navigation="true" breakpoints='{
+                    "1200": {
+                        "slidesPerView": 4
+                    },
+                    "1000": {
+                        "slidesPerView": 3 
+                    },
+                    "600": {
+                        "slidesPerView": 2 
+                    },
+                    "400": {
+                        "slidesPerView": 1 
+                    },
+                    "1": {
+                        "slidesPerView": 1 
+                    }
+                }'>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit7.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt1"></div>
+                    <div class="bdst" id="bdst1"></div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit8.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt2"></div>
+                    <div class="bdst" id="bdst2"></div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit9.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt3"></div>
+                    <div class="bdst" id="bdst3"></div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit10.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt4"></div>
+                    <div class="bdst" id="bdst4"></div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit11.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt5"></div>
+                    <div class="bdst" id="bdst5"></div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit12.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt6"></div>
+                    <div class="bdst" id="bdst6"></div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit13.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt7"></div>
+                    <div class="bdst" id="bdst7"></div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="benefit-icon">
+                        <img src="assets/images/benefit14.png" alt="">
+                    </div>
+                    <div class="bdt" id="bdt8"></div>
+                    <div class="bdst" id="bdst8"></div>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </section>
+    <section class="system" id="system">
+        <div class="container">
+            <div class="system-title d-flex justify-content-center" id="system_title"></div>
+            <div class="system-content">
+                <div class="d-flex flex-md-column flex-lg-row flex-column">
+                    <div class="system-item revealLeft">
+                        <img src="assets/images/system1.png" alt="">
+                        <div class="system-detail">
+                            <div class="title" id="sdt1"></div>
+                            <button data-toggle="modal" data-target="#sys1ModalCenter">
+                                <span id="read_more1"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="system-item revealRight">
+                        <img src="assets/images/system2.png" alt="">
+                        <div class="system-detail">
+                            <div class="title" id="sdt2"></div>
+                            <button data-toggle="modal" data-target="#sys2ModalCenter">
+                                <span id="read_more2"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-md-column flex-lg-row flex-column">
+                    <div class="system-item revealLeft">
+                        <img src="assets/images/system3.png" alt="">
+                        <div class="system-detail">
+                            <div class="title" id="sdt3"></div>
+                            <button data-toggle="modal" data-target="#sys3ModalCenter">
+                                <span id="read_more3"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="system-item revealRight">
+                        <img src="assets/images/system4.png" alt="">
+                        <div class="system-detail">
+                            <div class="title" id="sdt4"></div>
+                            <button data-toggle="modal" data-target="#sys4ModalCenter">
+                                <span id="read_more4"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal System 1 -->
+    <div class="modal fade" id="sys1ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="system-item">
+                    <img src="assets/images/system1.png" alt="">
+                    <div class="system-detail">
+                        <div class="title" id="sdt1M"></div>
+                        <div class="detail">
+                            <div class="titleModal" id="RV"></div>
+                            <div class="subTitleModal" id="RVST"></div>
+                            <div class="titleModal" id="PL"></div>
+                            <div class="subTitleModal">
+                                <span id="PLST1"></span>
+                                <span style="color: #FFC100;" id="PLST2"></span>
+                                <span id="PLST3"></span>
+                            </div>
+                            <div class="titleModal" id="AE"></div>
+                            <div class="subTitleModal">
+                                <span id="AEST1"></span>
+                                <span style="color: #FFC100;" id="AEST2"></span>
+                                <span id="AEST3"></span>
+                            </div>
+                            <div class="titleModal" id="BG"></div>
+                            <div class="subTitleModal">
+                                <span id="BGST1"></span>
+                                <span style="color: #FFC100;" id="BGST2"></span>
+                            </div>
+                        </div>
+                        <button data-dismiss="modal">
+                            <span id="read_less1"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal System 2 -->
+    <div class="modal fade" id="sys2ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="system-item">
+                    <img src="assets/images/system2.png" alt="">
+                    <div class="system-detail">
+                        <div class="title" id="sdt2M"></div>
+                        <div class="detail">
+                            <div class="titleModal" id="PO"></div>
+                            <div class="subTitleModal">
+                                <span id="POST1"></span>
+                                <span style="color: #FFC100;" id="POST2"></span>
+                                <span id="POST3"></span>
+                            </div>
+                            <div class="titleModal" id="IN"></div>
+                            <div class="subTitleModal">
+                                <span id="INST1"></span>
+                                <span style="color: #FFC100;" id="INST2"></span>
+                                <span id="INST3"></span>
+                            </div>
+                            <div class="titleModal" id="FA"></div>
+                            <div class="subTitleModal">
+                                <span id="FAST1"></span>
+                                <span style="color: #FFC100;" id="FAST2"></span>
+                                <span id="FAST3"></span>
+                            </div>
+                        </div>
+                        <button data-dismiss="modal">
+                            <span id="read_less2"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal System 3 -->
+    <div class="modal fade" id="sys3ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="system-item">
+                    <img src="assets/images/system3.png" alt="">
+                    <div class="system-detail p-4">
+                        <div class="title" id="sdt3M"></div>
+                        <div class="detail d-flex flex-column overflow-auto " style="width: 100%;">
+                            <div class="">
+                                <div class="">
+                                    <div class="titleModal" id="FN"></div>
+                                    <div class="subTitleModal">
+                                        <span id="FNST1"></span>
+                                        <span style="color: #FFC100;" id="FNST2"></span>
+                                        <span id="FNST3"></span>
+                                        <span style="color: #FFC100;" id="FNST4"></span>
+                                        <span id="FNST5"></span>
+                                    </div>
+                                    <div class="titleModal" id="AV"></div>
+                                    <div class="subTitleModal">
+                                        <span id="AVST1"></span>
+                                        <span style="color: #FFC100;" id="AVST2"></span>
+                                        <span id="AVST3"></span>
+                                    </div>
+                                    <div class="titleModal" id="AP"></div>
+                                    <div class="subTitleModal">
+                                        <span id="APST1"></span>
+                                        <span style="color: #FFC100;" id="APST2"></span>
+                                        <span id="APST3"></span>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="titleModal" id="AR"></div>
+                                    <div class="subTitleModal">
+                                        <span id="ARST1"></span>
+                                        <span style="color: #FFC100;" id="ARST2"></span>
+                                        <span id="ARST3"></span>
+                                    </div>
+                                    <div class="titleModal" id="GL"></div>
+                                    <div class="subTitleModal">
+                                        <span style="color: #FFC100;" id="GLST1"></span>
+                                        <span id="GLST2"></span>
+                                    </div>
+                                    <div class="titleModal" id="CT"></div>
+                                    <div class="subTitleModal">
+                                        <span id="CTST1"></span>
+                                        <span style="color: #FFC100;" id="CTST2"></span>
+                                        <span id="CTST3"></span>
+                                    </div>
+                                </div>
+                                <button data-dismiss="modal">
+                                    <span id="read_less3"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal System 4 -->
+    <div class="modal fade" id="sys4ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="system-item">
+                    <img src="assets/images/system4.png" alt="">
+                    <div class="system-detail">
+                        <div class="title" id="sdt4M"></div>
+                        <div class="detail">
+                            <div class="subTitleModal">
+                                <span id="Dashboard_ST1"></span>
+                                <span style="color: #FFC100;" id="Dashboard_ST2"></span>
+                                <span id="Dashboard_ST3"></span>
+                            </div>
+                        </div>
+                        <button data-dismiss="modal">
+                            <span id="read_less4"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="tutorial-burg">
+        <div class="container">
+            <div class="feature-title" id="OVC"></div>
+            <div class="navigate-content ">
+                <div class="navigate-d" data-slide="0">Dashboard</div>
+                <div class="navigate-d" data-slide="1" id="BPMG"></div>
+                <div class="navigate-d" data-slide="2" id="PWG"></div>
+                <div class="navigate-d" data-slide="3" id="AFG"></div>
+            </div>
+            <div
+                class="tutorial-content d-flex flex-md-column flex-column flex-lg-row d-flex justify-content-md-center align-items-md-center">
+                <swiper-container init="false" class="mySwiper3" navigation="true" pagination="true">
+                    <swiper-slide>
+                        <div class="swiper-content">
+                            <img src="assets/images/dashboard.png" alt="">
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="swiper-content">
+                            <img src="assets/images/bpmg.png" alt="">
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="swiper-content">
+                            <img src="assets/images/Parcel Work Group.jpg" alt="">
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="swiper-content">
+                            <img src="assets/images/AFG.jpg" alt="">
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+
+                <!-- <div class="frame-vdo revealLeft" style="max-width: 550px; width: 100%;">
+                    <div class="vdo" data-toggle="modal" data-target="#exampleModalCenter">
+                        <div class="play-vdo">
+                            <img src="assets/images/Polygon1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-vdo revealRight">
+                    <div class="title-vdo" id="Vdo_title"></div>
+                    <div class="subtitle-vdo" id="Vdo_subtitle">
+                    </div>
+                    <div class="btn-vdo" id="demo2"></div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- Modal VDO -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                vdo content
+            </div>
+        </div>
+    </div>
+    <section class="bg-last" id="home">
+        <div class="container last d-flex flex-column justify-content-center revealCenter">
+            <div class="last-title " id="promote5"></div>
+            <div class="last-subtitle" id="promote6"></div>
+            <a href="./contact-us.html" target="_blank" class="btn-demo btn-gradient" id="demo3"></a>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="text-lg-start text-muted" style="background-color: #12264D;">
+        <section class="">
+            <div class="container text-md-start text-white frame-footer d-flex p-4">
+                <div class="d-flex flex-column footer-card ">
+                    <div class="">
+                        <img src="assets/images/logo2.png" alt="">
+                    </div>
+                    <div class="d-flex justify-content-center flex-column" style="width: 100%; max-width: 300px;">
+                        <div class="" style="font-weight: 300;" id="quotes"></div>
+                    </div>
+                </div>
+                <div class="container p-4 d-flex justify-content-end">
+                    <div class="row">
+                        <div class="">
+                            <h5 class="text-uppercase mb-0" style="padding-bottom: 10px;" id="Contact_us"></h5>
+                            <ul class="list-unstyled mb-0" style="width: 300px;">
+                                <li style="padding-bottom: 5px;"><i class="fa-solid fa-phone"></i> :
+                                    <a href="tel:+6629972000" class="font-weight-light text-white"> +66 2997 2000 </a>
+                                </li>
+                                <li style="padding-bottom: 5px;"><i class="fa-solid fa-envelope"></i> :
+                                    <a href="mailto:ss_bkk@softsquaregroup.com" class="font-weight-light text-white"> ss_bkk@softsquaregroup.com </a>
+                                </li>
+                                <li ><i class="fa-brands fa-edge-legacy"></i> :
+                                    <a href="https://www.softsquaregroup.com/home"  target="_blank" class="font-weight-light text-white"> www.softsquaregroup.com </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="">
+                            <h5 class="text-uppercase mb-0" id="company_footer" style="padding-bottom: 10px;"></h5>
+                            <ul class="list-unstyled" style="width: 300px;">
+                                <li>
+                                    <div class="">
+                                        <div style="font-weight: 300;" id="company_address"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="company-footer container p-4 text-white d-flex justify-content-between align-items-center">
+            <!-- <div class="col-md-2 col-lg-2 col-xl-2 ">
+                <img src="assets/images/logo2.png" alt="">
+            </div> -->
+            <div class="company">
+                <div class="font-weight-light">© 2024  Enterprise Resource Planning</div>
+            </div>
+            <div class="footer-content">
+                <a href="mailto:ss_bkk@softsquaregroup.com" data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                    style="background-color: #dd4b39; border-radius: 50px;" role="button"><i
+                        class="fab fa-google"></i></a>
+                <a href="https://www.google.com/maps?q=51/599+Moo+7+Tambon+Lak+Hok,+Mueang+Pathum+Thani+District,+Pathum+Thani"
+                    target="_blank" data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                    style="background-color: #3b86cc; border-radius: 50px;" role="button"><i
+                        class="fa-solid fa-location-dot"></i></a>
+                <a href="tel:+6629972000" data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                    style="background-color: #21cf6f; border-radius: 50px;" role="button"><i
+                        class="fa-solid fa-phone"></i></a>
+                <a href="https://www.softsquaregroup.com/home" target="_blank" data-mdb-ripple-init
+                    class="btn text-white btn-floating m-1" style="background-color: #F26B0F; border-radius: 50px;"
+                    role="button"><i class="fa-brands fa-chrome"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

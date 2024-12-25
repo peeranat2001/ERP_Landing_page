@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="icon" href="assets/images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="contact-us.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" type="module" defer></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/page/page.js"></script>
+  <script src="contact-us.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <div class="img-content">
+          <img src="assets/images/register.png" alt="" style="width: 400px;">
+        </div>
+        <form id="dataForm">
+          <div class="formbold-form-title">
+            <h2 class="">ลงทะเบียนสาธิตการใช้งาน</h2>
+            <p>
+              ลงทะเบียนเพื่อรับสิทธินัดสาธิตการใช้งานได้เลยที่นี่ กับ Enterprise Resource Planning
+            </p>
+          </div>
+
+          <div class="formbold-input-flex">
+            <div>
+              <label for="firstname" class="formbold-form-label">
+                ชื่อ
+              </label>
+              <input type="text" name="firstname" id="firstname" class="formbold-form-input" required/>
+            </div>
+            <div>
+              <label for="lastname" class="formbold-form-label"> นามสกุล </label>
+              <input type="text" name="lastname" id="lastname" class="formbold-form-input" required/>
+            </div>
+          </div>
+
+          <div class="formbold-input-flex">
+            <div>
+              <label for="email" class="formbold-form-label"> อีเมล </label>
+              <input type="email" name="email" id="email" class="formbold-form-input" required/>
+            </div>
+            <div>
+              <label for="phone" class="formbold-form-label"> เบอร์โทรศัพท์ </label>
+              <input type="text" name="phone" id="phone" class="formbold-form-input" required/>
+            </div>
+          </div>
+          <div id="response" style="margin-top: 20px;"></div>
+
+          <button type="button" class="btn btn-demo btn-gradient " onclick="sendData()">ยืนยันการส่งข้อมูล</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
