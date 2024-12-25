@@ -83,13 +83,12 @@ body {
 }
 
 .formbold-form-input {
-    text-align: center;
     width: 100%;
-    padding: 13px 2px;
+    padding: 10px 8px 10px 8px;
     border-radius: 5px;
     border: 1px solid #dde3ec;
     background: #ffffff;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 16px;
     color: #536387;
     outline: none;
@@ -187,3 +186,13 @@ body {
     text-decoration: none;
     color: #ffffff;
 }
+select.formbold-form-input.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('./assets/images/down-arrow.png') no-repeat right 15px center;
+    background-size: 12px;
+    cursor: pointer;
+  }
+  
+  

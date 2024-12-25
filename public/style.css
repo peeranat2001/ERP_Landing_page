@@ -1076,7 +1076,7 @@ html {
 
 footer {
     .frame-footer {
-        padding: 30px 0 20px 0;
+        padding: 30px 24px 20px 24px;
         border-bottom-width: 2px;
         border-bottom-style: solid;
         border-bottom-color: #ffffff;
@@ -1707,6 +1707,11 @@ footer {
             }
         }
     }
+    /* footer{
+        .frame-footer{
+            max-width: 0px;
+        }
+    } */
 }
 
 @media (max-width: 350px) {
@@ -1836,13 +1841,27 @@ footer {
         .footer-content {
             max-width: 400px;
         }
+        .company-footer {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
+        .frame-footer{
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
-
+@media (max-width: 345px) {
+    footer {
+        .frame-footer {
+            padding: 0px;
+        }
+    }
+}
 @media (max-width: 420px) {
     footer {
         .frame-footer {
-            max-width: 300px;
             .footer-card{
                 display: flex;
                 flex-direction: column;

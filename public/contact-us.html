@@ -39,28 +39,63 @@
           <div class="formbold-input-flex">
             <div>
               <label for="firstname" class="formbold-form-label">
-                ชื่อ
+                ชื่อ <span style="color: rgb(240, 30, 30);">*</span>
               </label>
               <input type="text" name="firstname" id="firstname" class="formbold-form-input" required/>
             </div>
             <div>
-              <label for="lastname" class="formbold-form-label"> นามสกุล </label>
+              <label for="lastname" class="formbold-form-label"> 
+                นามสกุล <span style="color: rgb(240, 30, 30);">*</span>
+              </label>
               <input type="text" name="lastname" id="lastname" class="formbold-form-input" required/>
             </div>
           </div>
 
           <div class="formbold-input-flex">
             <div>
-              <label for="email" class="formbold-form-label"> อีเมล </label>
+              <label for="email" class="formbold-form-label"> 
+                อีเมล์ <span style="color: rgb(240, 30, 30);">*</span>
+              </label>
               <input type="email" name="email" id="email" class="formbold-form-input" required/>
             </div>
             <div>
-              <label for="phone" class="formbold-form-label"> เบอร์โทรศัพท์ </label>
+              <label for="phone" class="formbold-form-label"> 
+                เบอร์โทรศัพท์ <span style="color: rgb(240, 30, 30);">*</span>
+              </label>
               <input type="text" name="phone" id="phone" class="formbold-form-input" required/>
             </div>
           </div>
+          <div class="formbold-input-flex">
+            <div>
+              <label for="company" class="formbold-form-label">
+                ชื่อองค์กร <span style="color: rgb(240, 30, 30);">*</span>
+              </label>
+              <input type="text" name="company" id="company" class="formbold-form-input" required/>
+            </div>
+            <div>
+              <label for="employees" class="formbold-form-label"> 
+                จำนวนผู้ใช้งานในองค์กร <span style="color: rgb(240, 30, 30);">*</span>
+              </label>
+              <select name="employees" id="employees" class="formbold-form-input form-select" required>
+                <option value="" selected disabled hidden>กรุณาเลือก</option>
+                <option value="1-10" >1-10</option>
+                <option value="11-50">11-50</option>
+                <option value="51-200">51-200</option>
+                <option value="201-500">201-500</option>
+                <option value="501-1000">501-1000</option>
+                <option value="1000+">1000 +</option>
+              </select>
+            </div>
+          </div>
+          <div class="formbold-form-title">
+            <div>
+              <label for="phone" class="formbold-form-label"> 
+                รายละเอียดเพิ่มเติม (ถ้ามี)
+              </label>
+              <textarea class="form-control formbold-form-input" name="details" id="details" rows="5"></textarea>
+            </div>
+          </div>
           <div id="response" style="margin-top: 20px;"></div>
-
           <button type="button" class="btn btn-demo btn-gradient " onclick="sendData()">ยืนยันการส่งข้อมูล</button>
         </form>
       </div>

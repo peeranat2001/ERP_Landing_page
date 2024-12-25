@@ -9,9 +9,10 @@ function sendData() {
   formData.forEach((value, key) => {
     data[key] = value;
   });
+  console.log('data :>> ', data);
 
-  if (!data.firstname || !data.lastname || !data.email || !data.phone) {
-    responseDiv.innerHTML = `<p style="color: red;">กรุณากรอข้อมูลให้ครบ !</p>`;
+  if (!data.firstname || !data.lastname || !data.email || !data.phone || !data.company || !data.employees) {
+    responseDiv.innerHTML = `<p style="color: red;">กรุณากรอกข้อมูลให้ครบถ้วน!</p>`;
     return;
   }
 
