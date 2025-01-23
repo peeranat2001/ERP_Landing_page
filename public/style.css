@@ -254,7 +254,6 @@ html {
 .bg-hero::before {
     content: '';
     position: absolute;
-    /* ใช้ absolute positioning */
     top: 0;
     left: 0;
     right: 0;
@@ -264,16 +263,12 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.6;
-    /* กำหนดความโปร่งใส */
     z-index: 1;
-    /* กำหนด z-index ให้อยู่ด้านล่าง */
 }
 
 .bg-hero>* {
     position: relative;
-    /* ทำให้เนื้อหาที่อยู่ภายในอยู่เหนือ ::before */
     z-index: 2;
-    /* กำหนดให้เนื้อหาดูชัดเจน */
 }
 
 .sub-hero {
@@ -283,7 +278,6 @@ html {
     border-radius: 20px;
     height: 250px;
     overflow: hidden;
-    /* ทำให้ส่วนที่เกินขอบของ sub-hero ไม่แสดง */
 
 
     .text-1 {
@@ -848,75 +842,11 @@ html {
         justify-content: space-around;
         gap: 50px;
 
-        /* .frame-vdo {
-            .vdo {
-                background-color: #ffffff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                height: 325px;
-                border-radius: 20px;
-
-                .play-vdo {
-                    background-color: #5A9BD5;
-                    width: 90px;
-                    height: 90px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 50px;
-                    padding-left: 7px;
-                }
-
-                &:hover .play-vdo {
-                    width: 95px;
-                    height: 95px;
-                }
-            }
-        }
-
-        .about-vdo {
-            color: white;
-            font-family: "Kanit";
-            max-width: 440px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 15px;
-
-            .title-vdo {
-                font-size: 36px;
-                font-weight: 600;
-            }
-
-            .subtitle-vdo {
-                font-weight: 300;
-            }
-
-            .btn-vdo {
-                background: linear-gradient(115deg, #ED7D31 34.2%, #FFC100 136.43%);
-                border: none;
-                padding: 10px;
-                border-radius: 5px;
-                cursor: pointer;
-                max-width: 160px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .btn-vdo:hover {
-                opacity: 0.9;
-                color: white;
-            }
-        } */
-
         swiper-container {
             width: 100%;
             max-width: 900px;
             height: 100%;
-            height: 450px;
+            height: 500px;
             padding-top: 15px;
 
         }
@@ -925,57 +855,84 @@ html {
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: default;
 
             .swiper-content {
-                background: #fff;
                 border-radius: 10px;
                 display: flex;
                 flex-direction: column;
-                cursor: grab;
+                align-items: center;
                 width: 100%;
                 max-width: 780px;
                 height: 100%;
                 overflow: hidden;
 
+                .title-preview {
+                    color: white;
+                    font-size: 18px;
+                    font-weight: 300;
+                    padding-bottom: 20px;
+                }
+
                 img {
+                    border-radius: 10px;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                 }
             }
         }
-
-        swiper-slide:active {
-            cursor: grabbing;
-        }
     }
 
-    .navigate-content {
-        padding-top: 50px;
+    .tt-nav-content {
         display: flex;
         justify-content: center;
         align-items: center;
-        
-        .navigate-d {
-            background-color: rgba(168, 168, 168, 0.5);
-            padding: 7px 20px 7px 20px;
-            border-radius: 25px;
-            margin-bottom: 20px;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            margin-left: 10px;
-            margin-right: 10px;
+        .navigate-content {
+            padding-top: 50px;
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            width: 100%;
+            white-space: nowrap;
+            overflow-x: auto;
+            transition: overflow 0.2s ease;
+            user-select: none;
+
+            .navigate-d {
+                background-color: rgba(168, 168, 168, 0.5);
+                padding: 7px 20px 7px 20px;
+                border-radius: 25px;
+                margin-bottom: 20px;
+                transition: transform 0.2s ease, background-color 0.2s ease;
+                margin-left: 10px;
+                margin-right: 10px;
+                flex-shrink: 0;
+            }
+
+            .navigate-d:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+
+            .navigate-d.active {
+                background-color: #fff;
+            }
+        }
+/* 
+        .navigate-content:hover {
+            overflow-x: auto;
+        } */
+
+        .navigate-content::-webkit-scrollbar {
+            height: 3px;
         }
 
-        .navigate-d:hover {
-            cursor: pointer;
-            transform: scale(1.05);
-        }
-
-        .navigate-d.active {
-            background-color: #fff;
+        .navigate-content::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 3px;
         }
     }
-
 }
 
 .swiper-slide-shadow.swiper-slide-shadow-creative {
@@ -990,6 +947,7 @@ html {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     width: 20px;
     height: 20px;
+    margin-top: 5px;
 }
 
 .mySwiper3::part(button-next) {
@@ -1000,6 +958,7 @@ html {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     width: 20px;
     height: 20px;
+    margin-top: 5px;
 }
 
 .mySwiper3::part(button-prev):hover,
@@ -1469,16 +1428,12 @@ footer {
         }
     }
 }
+/* 
 @media (max-width: 1024px) {
-    .navigate-content{
-        display: flex;
-        flex-direction: column;
-        .navigate-d{
-            width: 100%;
-            max-width: 400px;
+        .navigate-d {
         }
-    }
-}
+} */
+
 @media (max-width: 370px) {
     .system {
         height: max-content;
@@ -1707,6 +1662,7 @@ footer {
             }
         }
     }
+
     /* footer{
         .frame-footer{
             max-width: 0px;
@@ -1841,17 +1797,20 @@ footer {
         .footer-content {
             max-width: 400px;
         }
+
         .company-footer {
             display: flex;
             flex-direction: column-reverse;
             gap: 10px;
         }
-        .frame-footer{
+
+        .frame-footer {
             display: flex;
             flex-direction: column;
         }
     }
 }
+
 @media (max-width: 345px) {
     footer {
         .frame-footer {
@@ -1859,10 +1818,11 @@ footer {
         }
     }
 }
+
 @media (max-width: 420px) {
     footer {
         .frame-footer {
-            .footer-card{
+            .footer-card {
                 display: flex;
                 flex-direction: column;
                 align-items: center;

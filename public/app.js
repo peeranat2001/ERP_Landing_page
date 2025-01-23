@@ -188,6 +188,18 @@ function changeLanguage(language) {
         document.getElementById('OVC').textContent = translations.OVC;
         document.getElementById('company_footer').textContent = translations.company_footer;
         document.getElementById('quotes').textContent = translations.quotes;
+        document.getElementById('jjb').textContent = translations.jjb;
+        document.getElementById('ymt').textContent = translations.ymt;
+        document.getElementById('babi').textContent = translations.babi;
+        document.getElementById('rita').textContent = translations.rita;
+        document.getElementById('ttp1').textContent = translations.ttp1;
+        document.getElementById('ttp2').textContent = translations.ttp2;
+        document.getElementById('ttp3').textContent = translations.ttp3;
+        document.getElementById('ttp4').textContent = translations.ttp4;
+        document.getElementById('ttp5').textContent = translations.ttp5;
+        document.getElementById('ttp6').textContent = translations.ttp6;
+        document.getElementById('ttp7').textContent = translations.ttp7;
+        document.getElementById('ttp8').textContent = translations.ttp8;
 
     }).catch(error => {
         console.error('Error loading translations:', error);
@@ -197,16 +209,14 @@ function changeLanguage(language) {
 var swiper3El = document.querySelector(".mySwiper3");
 Object.assign(swiper3El, {
     grabCursor: true,
-    effect: "creative",
-    creativeEffect: {
-        prev: {
-            shadow: true,
-            translate: ["-120%", 0, -500],
-        },
-        next: {
-            shadow: true,
-            translate: ["120%", 0, -500],
-        },
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true,
+    },
+    navigation: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
 });
 swiper3El.initialize()
@@ -217,6 +227,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.navigate-d').forEach((element, index) => {
             if (index === activeIndex) {
                 element.classList.add('active');
+
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',
+                    inline: 'center',
+                });
             } else {
                 element.classList.remove('active');
             }
@@ -253,10 +269,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ดึงค่าภาษาจาก localStorage ถ้ามี ถ้าไม่มีให้ใช้ค่าเริ่มต้นเป็น 'th'
     const language = localStorage.getItem('selectedLanguage') || 'th';
 
-    // อัปเดต currentLanguage ตามค่าที่บันทึกไว้ใน localStorage
     if (language === 'th') {
         currentLanguage = 'TH';
         document.getElementById('menuImage').src = 'assets/images/Flag-Thailand.webp'; // Thai flag (desktop)
@@ -316,6 +330,38 @@ ScrollReveal().reveal('.revealCenter', {
     viewFactor: 0.1,
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const navigateContent = document.querySelector('.navigate-content');
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    navigateContent.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        navigateContent.classList.add('active');
+        startX = e.pageX - navigateContent.offsetLeft;
+        scrollLeft = navigateContent.scrollLeft;
+    });
+
+    navigateContent.addEventListener('mouseleave', () => {
+        isDragging = false;
+        navigateContent.classList.remove('active');
+    });
+
+    navigateContent.addEventListener('mouseup', () => {
+        isDragging = false;
+        navigateContent.classList.remove('active');
+    });
+
+    navigateContent.addEventListener('mousemove', (e) => {
+        if (!isDragging) return; // ถ้าไม่ได้ลากออกไป
+        e.preventDefault();
+        const x = e.pageX - navigateContent.offsetLeft;
+        const walk = (x - startX) * 2; // ความเร็วในการเลื่อน (คูณ 2)
+        navigateContent.scrollLeft = scrollLeft - walk;
+    });
+});
 
 
 
