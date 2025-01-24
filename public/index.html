@@ -11,7 +11,6 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
@@ -20,8 +19,11 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" type="module" defer></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="app.js" defer></script>
     <script src="https://unpkg.com/page/page.js"></script>
+    <script src="app.js?v=1.1" defer></script>
+    <link rel="stylesheet" href="style.css?v=1.1" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body id="app">
@@ -34,6 +36,7 @@
                 <div class="menu-list d-none d-lg-block d-lg-flex">
                     <div class="menu-title">
                         <a class="text-decoration-none" href="#feature" id="productFeature"></a>
+                        <a class="text-decoration-none" href="#benefits" id="beneforu"></a>
                         <a class="text-decoration-none" href="#system" id="ERPSupport"></a>
                     </div>
                     <div class="action">
@@ -65,6 +68,8 @@
                             <div class="custom-flex">
                                 <a class="text-decoration-none" style="color: #203864;" href="#feature"
                                     id="productFeatureMB"></a>
+                                <a class="text-decoration-none" style="color: #203864;" href="#benefits"
+                                    id="beneforuMb"></a>
                                 <a class="text-decoration-none" style="color: #203864;" href="#system"
                                     id="ERPSupportMB"></a>
                                 <a class="text-decoration-none" style="color: #203864;" href="./contact-us.html"
@@ -179,7 +184,7 @@
                     <div class="icon">
                         <img src="assets/images/6.2.png" alt="">
                     </div>
-                    <div class="description">
+                    <div class="description" id="benefits">
                         <div class="fdt">
                             <div class="d-flex justify-content-center" id="fdt7"></div>
                             <div class="d-flex justify-content-center" id="fdt8"></div>
@@ -498,50 +503,96 @@
                 <swiper-container init="false" class="mySwiper3" navigation="true" pagination="true">
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp1"></div>
-                            <img src="assets/images/erp-img1.png" alt="">
+                            <div class="title-preview">
+                                <span id="ttp1"></span>
+                                <span style="color: #FFC100;" id="ttp1_1"></span>
+                                <span id="ttp1_2"></span>
+                            </div>
+                            <!-- <div class="for-mb"> -->
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img1.png" alt="">
+                            </div>
+                            <!-- </div> -->
                         </div>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp2"></div>
-                            <img src="assets/images/erp-img2.png" alt="">
+                            <div class="title-preview">
+                                <span id="ttp2"></span>
+                                <span style="color: #FFC100;" id="ttp2_1"></span>
+                            </div>
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img2.2.png" alt="">
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp3"></div>
-                            <img src="assets/images/erp-img3.png" alt="">
+                            <div class="title-preview">
+                                <span style="color: #FFC100;" id="ttp3"></span>
+                                <span id="ttp3_1"></span>
+                                <span style="color: #FFC100;" id="ttp3_2"></span>
+                            </div>
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img3.png" alt="">
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp4"></div>
-                            <img src="assets/images/erp-img4.png" alt="">
+                            <div class="title-preview">
+                                <span style="color: #FFC100;" id="ttp4"></span>
+                                <span id="ttp4_1"></span>
+                            </div>
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img4.png" alt="">
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp5"></div>
-                            <img src="assets/images/erp-img5.png" alt="">
+                            <div class="title-preview">
+                                <span id="ttp5"></span>
+                                <span style="color: #FFC100;" id="ttp5_1"></span>
+                            </div>
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img5.png" alt="">
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp6"></div>
-                            <img src="assets/images/erp-img6.png" alt="">
+                            <div class="title-preview">
+                                <span style="color: #FFC100;" id="ttp6"></span>
+                                <span id="ttp6_1"></span>
+                            </div>
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img6.png" alt="">
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp7"></div>
-                            <img src="assets/images/erp-img7.png" alt="">
+                            <div class="title-preview">
+                                <span id="ttp7"></span>
+                                <span style="color: #FFC100;" id="ttp7_1"></span>
+                                <span id="ttp7_2"></span>
+                            </div>
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img7.png" alt="">
+                            </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
                         <div class="swiper-content">
-                            <div class="title-preview" id="ttp8"></div>
-                            <img src="assets/images/erp-img8.png" alt="">
+                            <div class="title-preview">
+                                <span id="ttp8"></span>
+                                <span style="color: #FFC100;" id="ttp8_1"></span>
+                                <span id="ttp8_2"></span>
+                            </div>
+                            <div class="swiper-zoom-container">
+                                <img src="assets/images/erp-img8.png" alt="">
+                            </div>
                         </div>
                     </swiper-slide>
                 </swiper-container>

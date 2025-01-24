@@ -848,7 +848,7 @@ html {
             height: 100%;
             height: 500px;
             padding-top: 15px;
-
+            touch-action: auto;
         }
 
         swiper-slide {
@@ -866,6 +866,7 @@ html {
                 max-width: 780px;
                 height: 100%;
                 overflow: hidden;
+                /* overflow-x: auto; */
 
                 .title-preview {
                     color: white;
@@ -874,11 +875,14 @@ html {
                     padding-bottom: 20px;
                 }
 
-                img {
-                    border-radius: 10px;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                .swiper-zoom-container {
+                    img {
+                        border-radius: 10px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        /* min-width: 500px; */
+                    }
                 }
             }
         }
@@ -888,6 +892,7 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
+
         .navigate-content {
             padding-top: 50px;
             display: flex;
@@ -919,7 +924,8 @@ html {
                 background-color: #fff;
             }
         }
-/* 
+
+        /* 
         .navigate-content:hover {
             overflow-x: auto;
         } */
@@ -1428,6 +1434,7 @@ footer {
         }
     }
 }
+
 /* 
 @media (max-width: 1024px) {
         .navigate-d {
@@ -1874,6 +1881,30 @@ footer {
         }
     }
 
+    .tutorial-burg {
+        & .tutorial-content {
+            & swiper-container {
+                height: 400px;
+            }
+
+            & swiper-slide {
+                & .swiper-content {
+                    img {
+                        height: min-content;
+                        object-fit: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    .mySwiper3::part(button-next) {
+        margin-top: 0px;
+    }
+
+    .mySwiper3::part(button-prev) {
+        margin-top: 0px;
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -1991,5 +2022,32 @@ footer {
                 }
             }
         }
+    }
+
+    .tutorial-burg {
+        & .tutorial-content {
+            & swiper-container {
+                height: 350px;
+            }
+
+            & swiper-slide {
+                & .swiper-content {
+                    .swiper-zoom-container {
+                    img {
+                        height: min-content;
+                        object-fit: unset;
+                    }
+                }
+                }
+            }
+        }
+    }
+
+    .mySwiper3::part(button-next) {
+        margin-top: 5px;
+    }
+
+    .mySwiper3::part(button-prev) {
+        margin-top: 5px;
     }
 }

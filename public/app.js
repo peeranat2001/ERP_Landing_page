@@ -193,13 +193,27 @@ function changeLanguage(language) {
         document.getElementById('babi').textContent = translations.babi;
         document.getElementById('rita').textContent = translations.rita;
         document.getElementById('ttp1').textContent = translations.ttp1;
+        document.getElementById('ttp1_1').textContent = translations.ttp1_1;
+        document.getElementById('ttp1_2').textContent = translations.ttp1_2;
         document.getElementById('ttp2').textContent = translations.ttp2;
+        document.getElementById('ttp2_1').textContent = translations.ttp2_1;
         document.getElementById('ttp3').textContent = translations.ttp3;
+        document.getElementById('ttp3_1').textContent = translations.ttp3_1;
+        document.getElementById('ttp3_2').textContent = translations.ttp3_2;
         document.getElementById('ttp4').textContent = translations.ttp4;
+        document.getElementById('ttp4_1').textContent = translations.ttp4_1;
         document.getElementById('ttp5').textContent = translations.ttp5;
+        document.getElementById('ttp5_1').textContent = translations.ttp5_1;
         document.getElementById('ttp6').textContent = translations.ttp6;
+        document.getElementById('ttp6_1').textContent = translations.ttp6_1;
         document.getElementById('ttp7').textContent = translations.ttp7;
+        document.getElementById('ttp7_1').textContent = translations.ttp7_1;
+        document.getElementById('ttp7_2').textContent = translations.ttp7_2;
         document.getElementById('ttp8').textContent = translations.ttp8;
+        document.getElementById('ttp8_1').textContent = translations.ttp8_1;
+        document.getElementById('ttp8_2').textContent = translations.ttp8_2;
+        document.getElementById('beneforu').textContent = translations.beneforu;
+        document.getElementById('beneforuMb').textContent = translations.beneforuMb;
 
     }).catch(error => {
         console.error('Error loading translations:', error);
@@ -207,19 +221,41 @@ function changeLanguage(language) {
 }
 
 var swiper3El = document.querySelector(".mySwiper3");
-Object.assign(swiper3El, {
-    grabCursor: true,
-    effect: "fade",
-    fadeEffect: {
-        crossFade: true,
-    },
-    navigation: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-swiper3El.initialize()
+const screenWidth = window.innerWidth;
+
+if (screenWidth < 768) {
+    Object.assign(swiper3El, {
+        zoom: {
+            maxRatio: 5,
+            minRation: 1
+        },
+        grabCursor: false, // ปิดตัวชี้เมาส์แบบ Grab
+        effect: "slide", // ใช้ slide effect
+        allowTouchMove: false, // ปิดการเลื่อนด้วยการสัมผัสหรือเมาส์
+        navigation: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        slidesPerView: 1, // แสดงทีละ 1 รูป
+    });
+    swiper3El.initialize();
+} else {
+    Object.assign(swiper3El, {
+        grabCursor: true,
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true,
+        },
+        navigation: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+    swiper3El.initialize();
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const swiper = document.querySelector('.mySwiper3').swiper;
@@ -238,7 +274,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
+    swiper.on( swiper.zoom.out);
+    swiper.on( swiper.zoom.in);
     swiper.on('slideChange', function () {
         updateActiveNavigation(swiper.activeIndex);
     });
